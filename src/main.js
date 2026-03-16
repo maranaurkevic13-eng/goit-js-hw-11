@@ -1,6 +1,6 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-import { getImagesByQuery } from "./js/pixabay-api";
+import { getImagesByQuery } from "./js/pixabay-api.js";
 import {
     createGallery,
     clearGallery,
@@ -23,8 +23,7 @@ formEl.addEventListener('submit', e => {
          message: 'Please enter a search term',
         });
         return;
-    }
-});
+    }   
 
 clearGallery();
 showLoader();
@@ -50,4 +49,5 @@ getImagesByQuery(value)
     console.error(error);
   });
 
+});
 

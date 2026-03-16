@@ -19,19 +19,17 @@ export function getImagesByQuery(query) {
     method: "GET",
   };
     
-    return fetch(url, options)
-        .then((res) => {
-            if (!res.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return res.json();
-        })
-        .then((data) => {
-             return res.data;
-        })
-        .catch((error) => {
-            throw error;
-        })
-    
-
+  return fetch(url, options)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      return data;  
+    })
+    .catch((error) => {
+      throw error;
+    });
 }

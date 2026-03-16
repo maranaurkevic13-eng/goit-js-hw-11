@@ -38,3 +38,10 @@
 .button:hover {
   background: #6c8cff;
 }
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+}
