@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function getImagesByQuery(query) {
+export async function getImagesByQuery(query) {
     const BASE_URL = 'https://pixabay.com';
     const END_POINT = '/api/';
     const API_KEY = '55046139-0926bc9d71fa83e7a7b72101e'
@@ -19,17 +19,10 @@ export function getImagesByQuery(query) {
     method: "GET",
   };
     
-  return fetch(url, options)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return res.json();
-    })
-    .then((data) => {
-      return data;  
-    })
-    .catch((error) => {
-      throw error;
-    });
+     try {
+    const response = await axios.get(BASE_URL, { params });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 }
